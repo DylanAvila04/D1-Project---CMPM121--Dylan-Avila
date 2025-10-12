@@ -18,3 +18,4 @@ button?.addEventListener("click", () => {
     counterElement.textContent = `You have ${counter} crossiants!🥐`; // update the counter display
   }
 });
+//step 2 complete
