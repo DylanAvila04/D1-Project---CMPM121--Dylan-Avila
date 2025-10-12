@@ -21,6 +21,12 @@ button:active {
   color: white;
 }
 
+div {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
 body {
   background-color: #fdefd4; /* warm pastry tone */
   color: #4a2c00;
