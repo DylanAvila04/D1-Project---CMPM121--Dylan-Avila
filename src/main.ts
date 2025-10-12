@@ -35,11 +35,10 @@ button?.addEventListener("click", () => {
 
 bakerButton?.addEventListener("click", () => {
   if (counter >= bakerCost) {
-    bakers++; // increase number of cooks by 1
+    bakers += 1; // increase number of cooks by 1
     counter -= bakerCost; // decrease counter by cost of cook
-    cookscrossiants = bakers; // each cook makes 1 crossiant per second
+    cookscrossiants = bakers * 1; // each cook makes 1 crossiant per second
     updateDisplay();
-    // updateCookDisplay();
   }
 });
 
@@ -59,18 +58,16 @@ function loop(timestamp: number) {
 requestAnimationFrame(loop);
 
 function updateDisplay() {
+  const visible = Math.floor(counter);
+
   if (counterElement) {
-    counterElement.textContent = `You have ${counter} crossiants!🥐`; // update the counter display
-  }
-  if (counterElement) {
-    const visible = Math.floor(counter);
-    counterElement.textContent = `You have ${visible} crossiants!🥐`; // update the counter display
+    counterElement.textContent = `You have ${visible} crossiants!🥐`;
   }
   if (rateElement) {
     rateElement.textContent =
-      `You are making ${cookscrossiants} crossiants per second!🥐`; // update the rate display
+      `You are making ${cookscrossiants} crossiants per second!🥐`;
   }
   if (bakerButton) {
-    bakerButton.textContent = `10 crossiants = 1 Baker👩‍🍳 (Owned: ${bakers})`; // update the baker button display
+    bakerButton.textContent = `10 crossiants = 1 Baker👩‍🍳 (Owned: ${bakers})`;
   }
 }
