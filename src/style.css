@@ -3,3 +3,27 @@
   vertical-align: top;
   border: 1px solid salmon;
 }
+
+button {
+  display: block;
+  margin: 0 auto;
+  font-size: 60px;
+  padding: 12px 24px;
+  width: 80%;
+  max-width: 110px;
+  background-color: rgb(139, 96, 14);
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+button:active {
+  background-color: black;
+  color: white;
+}
+
+body {
+  background-color: #fdefd4; /* warm pastry tone */
+  color: #4a2c00;
+  font-family: "Comic Sans MS", cursive;
+  text-align: center;
+}

@@ -1,6 +1,8 @@
-import exampleIconUrl from "./noun-paperclip-7598668-00449F.png";
 import "./style.css";
 
+// style = "display : block, margin : 0 auto"; font - size: 20px;"
+
+// Create a new button
 document.body.innerHTML = `
-  <p>Example image asset: <img src="${exampleIconUrl}" class="icon" /></p>
+  <button> 🥐 </button>
 `;
