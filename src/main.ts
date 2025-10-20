@@ -32,10 +32,10 @@ document.body.innerHTML = `
   <div id ="shop"></div>
 `;
 
-const mainButton = document.getElementById("mainButton");
-const counterElement = document.getElementById("Counter");
-const rateElement = document.getElementById("rate");
-const shopElement = document.getElementById("shop");
+const mainButton = document.getElementById("mainButton") as HTMLButtonElement;
+const counterElement = document.getElementById("Counter") as HTMLDivElement;
+const rateElement = document.getElementById("rate") as HTMLDivElement;
+const shopElement = document.getElementById("shop") as HTMLDivElement;
 
 let counter = 0; // 0 crossiants to start
 const owned: Record<string, number> = {};
