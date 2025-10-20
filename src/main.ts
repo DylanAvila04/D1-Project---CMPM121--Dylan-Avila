@@ -25,9 +25,11 @@ const stoneOvenButton = document.getElementById("stoneOven");
 
 let counter = 0; // 0 crossiants to start
 
-const assistantCost = 10;
-const bakerCost = 100; // cost of 1 cook
-const stoneOvenCost = 1000;
+const Price_Multiply = 1.15;
+
+let assistantCost = 10;
+let bakerCost = 100; // cost of 1 cook
+let stoneOvenCost = 1000;
 
 const rateAssistant = 0.1;
 const rateBaker = 2.0;
@@ -55,6 +57,7 @@ assistantButton?.addEventListener("click", () => {
   if (counter >= assistantCost) {
     ownedAssistants += 1; // increase number of cooks by 1
     counter -= assistantCost; // decrease counter by cost of cook
+    assistantCost *= Price_Multiply;
     updateDisplay();
   }
 });
@@ -63,6 +66,7 @@ bakerButton?.addEventListener("click", () => {
   if (counter >= bakerCost) {
     bakers += 1; // increase number of cooks by 1
     counter -= bakerCost; // decrease counter by cost of cook
+    bakerCost *= Price_Multiply;
     updateDisplay();
   }
 });
@@ -71,6 +75,7 @@ stoneOvenButton?.addEventListener("click", () => {
   if (counter >= stoneOvenCost) {
     ownedStoneOven += 1; // increase number of cooks by 1
     counter -= stoneOvenCost; // decrease counter by cost of cook
+    stoneOvenCost *= Price_Multiply;
     updateDisplay();
   }
 });
@@ -103,18 +108,22 @@ function updateDisplay() {
     } crossiants per second!🥐`;
   }
   if (bakerButton) {
-    (bakerButton as HTMLButtonElement).textContent =
-      `100 crossiants = 1 Baker👩‍🍳 (Owned: ${bakers})`;
+    (bakerButton as HTMLButtonElement).textContent = `${
+      bakerCost.toFixed(2)
+    } crossiants = 1 Baker👩‍🍳 (Owned: ${bakers})`;
     (bakerButton as HTMLButtonElement).disabled = counter < bakerCost;
   }
   if (assistantButton) {
-    (assistantButton as HTMLButtonElement).textContent =
-      `10 crossiants = 1 Assistant Baker 🧑‍🍳 (Owned: ${ownedAssistants})`;
+    (assistantButton as HTMLButtonElement).textContent = `${
+      assistantCost.toFixed(1)
+    } crossiants = 1 Assistant Baker 🧑‍🍳 (Owned: ${ownedAssistants})`;
     (assistantButton as HTMLButtonElement).disabled = counter < assistantCost;
+    console.log("bakercost ->", assistantCost);
   }
   if (stoneOvenButton) {
-    (stoneOvenButton as HTMLButtonElement).textContent =
-      `1000 crossiants = 1 Stone Oven (Owned: ${ownedStoneOven})`;
+    (stoneOvenButton as HTMLButtonElement).textContent = `${
+      stoneOvenCost.toFixed(1)
+    } croissants = 1 Stone Oven (Owned: ${ownedStoneOven})`;
     (stoneOvenButton as HTMLButtonElement).disabled = counter < stoneOvenCost;
   }
 }
