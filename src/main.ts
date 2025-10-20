@@ -14,12 +14,44 @@ interface Item {
   name: string;
   cost: number;
   rate: number;
+  description: string;
 }
 
 const availableItems: Item[] = [
-  { name: "Assistant Baker ", cost: 10, rate: 0.1 },
-  { name: "Baker ", cost: 100, rate: 2 },
-  { name: "Stone Oven", cost: 1000, rate: 50 },
+  {
+    name: "Assistant Baker ",
+    cost: 10,
+    rate: 0.1,
+    description: " Likes to help the baker with the small prep ",
+  },
+
+  {
+    name: "Baker ",
+    cost: 100,
+    rate: 2,
+    description: " handles the whole kitchen alongside the assistant",
+  },
+
+  {
+    name: "Stone Oven",
+    cost: 1000,
+    rate: 50,
+    description: " Speeds up the time for pastries and cuts the line",
+  },
+
+  {
+    name: "Mixer",
+    cost: 2000,
+    rate: 100,
+    description: "Helps speed up the process instead of handmade",
+  },
+
+  {
+    name: "Salesperson",
+    cost: 5000,
+    rate: 250,
+    description: "Helps sell the corssiants and makes revenue ",
+  },
 ];
 
 const Price_Multiply = 1.15;
