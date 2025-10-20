@@ -44,6 +44,40 @@ div {
   color: white;
 }
 
+#assistantBaker {
+  display: block;
+  margin: 0 auto;
+  font-size: 14px;
+  padding: 12px 12px;
+  width: 80%;
+  max-width: 195px;
+  background-color: rgb(102, 73, 30);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+}
+#assistantBaker:active {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+#stoneOven {
+  display: block;
+  margin: 0 auto;
+  font-size: 14px;
+  padding: 12px 12px;
+  width: 80%;
+  max-width: 195px;
+  background-color: rgb(102, 73, 30);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+}
+#stoneOven:active {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
 body {
   background-color: #fdefd4; /* warm pastry tone */
   color: #4a2c00;
