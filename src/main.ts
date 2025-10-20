@@ -10,8 +10,6 @@ import "./style.css";
 //best upgrade of a stone oven. I also changed the background to a more light brown
 //color for a cafe feeling.
 
-
-
 // Create a new button
 document.body.innerHTML = `
   <button> 🥐 </button>
