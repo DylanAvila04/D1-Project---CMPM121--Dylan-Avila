@@ -2,6 +2,16 @@ import "./style.css";
 
 // style = "display : block, margin : 0 auto"; font - size: 20px;"
 
+//Main theme of the game is a bakery that makes Crossiants similar to cookie clicker
+//The only difference is that it is a different type of patrie and the upgrades are different
+//as well. The upgrades consist of a assisant baker, baker, and stone oven
+//I wanted the assisant baker to be something you can hire cheap with 10 crossaints,
+//the next is a baker that is a bit more expensive with 100 bakers, lastly with the
+//best upgrade of a stone oven. I also changed the background to a more light brown
+//color for a cafe feeling.
+
+
+
 // Create a new button
 document.body.innerHTML = `
   <button> 🥐 </button>
