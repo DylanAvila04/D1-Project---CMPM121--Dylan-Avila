@@ -1,10 +1,11 @@
-.icon {
-  width: 240px;
-  vertical-align: middle;
-  border: 1px solid salmon;
+body {
+  background-color: #fdefd4; /* warm pastry tone */
+  color: #4a2c00;
+  font-family: "Comic Sans MS", cursive;
+  text-align: center;
 }
 
-button {
+#mainButton {
   display: block;
   margin: 0 auto;
   font-size: 60px;
@@ -15,10 +16,18 @@ button {
   color: white;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
 }
-button:active {
+
+#mainButton:active {
   background-color: black;
   color: white;
+}
+
+#mainButton.flash {
+  filter: grayscale(100%) brightness(150%);
+  transition: filter 0.15s ease;
 }
 
 div {
@@ -27,7 +36,7 @@ div {
   margin: 0 auto;
 }
 
-#baker {
+.shop-button {
   display: block;
   margin: 0 auto;
   font-size: 14px;
@@ -38,49 +47,21 @@ div {
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
-#baker:active {
+
+.shop-button:active {
   background-color: rgb(0, 0, 0);
   color: white;
 }
 
-#assistantBaker {
-  display: block;
-  margin: 0 auto;
-  font-size: 14px;
-  padding: 12px 12px;
-  width: 80%;
-  max-width: 195px;
-  background-color: rgb(102, 73, 30);
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 8px;
-}
-#assistantBaker:active {
-  background-color: rgb(0, 0, 0);
-  color: white;
+.shop-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-#stoneOven {
-  display: block;
-  margin: 0 auto;
-  font-size: 14px;
-  padding: 12px 12px;
-  width: 80%;
-  max-width: 195px;
-  background-color: rgb(102, 73, 30);
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 8px;
-}
-#stoneOven:active {
-  background-color: rgb(0, 0, 0);
-  color: white;
-}
-
-body {
-  background-color: #fdefd4; /* warm pastry tone */
-  color: #4a2c00;
-  font-family: "Comic Sans MS", cursive;
-  text-align: center;
+.icon {
+  width: 240px;
+  vertical-align: middle;
+  border: 1px solid salmon;
 }
