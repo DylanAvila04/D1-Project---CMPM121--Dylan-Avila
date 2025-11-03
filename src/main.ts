@@ -1,3 +1,18 @@
+//Crossiant Clicker Game
+//Main theme of the game is a bakery that makes Crossiants similar to cookie clicker
+//The only difference is that it is a different type of patrie and the upgrades are different
+//as well. The upgrades consist of a assisant baker, baker, and stone oven
+//I wanted the assisant baker to be something you can hire cheap with 10 crossaints,
+//the next is a baker that is a bit more expensive with 100 bakers, lastly with the
+//best upgrade of a stone oven. I also changed the background to a more light brown
+//color for a cafe feeling.
+
+// Key systems:
+//  *  - Manual clicking increases counter
+//  *  - Shop buttons remove cost and increase automation rate
+//  *  - Prices scale up over time using a multiplier
+//  *  - requestAnimationFrame ensures smooth timed updates
+
 // 1) Imports
 import "./style.css";
 
@@ -10,13 +25,6 @@ interface Item {
 }
 
 // 3) Game data (availableItems, Price_Multiply)
-//Main theme of the game is a bakery that makes Crossiants similar to cookie clicker
-//The only difference is that it is a different type of patrie and the upgrades are different
-//as well. The upgrades consist of a assisant baker, baker, and stone oven
-//I wanted the assisant baker to be something you can hire cheap with 10 crossaints,
-//the next is a baker that is a bit more expensive with 100 bakers, lastly with the
-//best upgrade of a stone oven. I also changed the background to a more light brown
-//color for a cafe feeling.
 
 const availableItems: Item[] = [
   {
@@ -138,6 +146,13 @@ shopElement.addEventListener("click", (e) => {
 });
 
 // 8) Game loop
+
+//This game loop runs every animation frame.
+// Each frame basically:
+//  1. Calculates elapsed time
+//  2. Adds passive croissants based on totalRate()
+//  3. Updates UI to show latest values
+//  4. Requests the next frame
 let pasttime: number | null = null;
 function loop(timestamp: number) {
   if (!pasttime) pasttime = timestamp;
