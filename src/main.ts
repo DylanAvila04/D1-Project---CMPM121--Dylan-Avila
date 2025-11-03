@@ -1,7 +1,17 @@
+// 1) Imports
 import "./style.css";
 
-// style = "display : block, margin : 0 auto"; font - size: 20px;"
 
+// 2) Type definitions
+interface Item {
+  name: string;
+  cost: number;
+  rate: number;
+  description: string;
+}
+
+
+// 3) Game data (availableItems, Price_Multiply)
 //Main theme of the game is a bakery that makes Crossiants similar to cookie clicker
 //The only difference is that it is a different type of patrie and the upgrades are different
 //as well. The upgrades consist of a assisant baker, baker, and stone oven
@@ -9,13 +19,6 @@ import "./style.css";
 //the next is a baker that is a bit more expensive with 100 bakers, lastly with the
 //best upgrade of a stone oven. I also changed the background to a more light brown
 //color for a cafe feeling.
-
-interface Item {
-  name: string;
-  cost: number;
-  rate: number;
-  description: string;
-}
 
 const availableItems: Item[] = [
   {
@@ -56,7 +59,8 @@ const availableItems: Item[] = [
 
 const Price_Multiply = 1.15;
 
-// Create a new button
+
+// 4) DOM setup
 document.body.innerHTML = `
   <button id = "mainButton"> 🥐 </button>
   <div id = "Counter"> You have 0 crossiants!🥐</div>
@@ -69,6 +73,8 @@ const counterElement = document.getElementById("Counter") as HTMLDivElement;
 const rateElement = document.getElementById("rate") as HTMLDivElement;
 const shopElement = document.getElementById("shop") as HTMLDivElement;
 
+
+// 5) State variables
 let counter = 0; // 0 crossiants to start
 const owned: Record<string, number> = {};
 const costs: Record<string, number> = {};
@@ -78,6 +84,8 @@ for (const item of availableItems) {
   costs[item.name] = item.cost;
 }
 
+
+// 6) Utility functions
 function shop() {
   shopElement.innerHTML = availableItems.map((i) => {
     return `<button data-name="${i.name}">
@@ -114,6 +122,8 @@ function updateDisplay() {
   });
 }
 
+
+// 7) Event listeners
 mainButton.addEventListener("click", () => {
   counter += 1;
   updateDisplay();
@@ -133,6 +143,8 @@ shopElement.addEventListener("click", (e) => {
   }
 });
 
+
+// 8) Game loop
 let pasttime: number | null = null;
 function loop(timestamp: number) {
   if (!pasttime) pasttime = timestamp;
