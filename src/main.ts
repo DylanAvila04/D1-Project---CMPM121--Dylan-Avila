@@ -19,35 +19,35 @@ interface Item {
 
 const availableItems: Item[] = [
   {
-    name: "Assistant Baker ",
+    name: "assistantBaker",
     cost: 10,
     rate: 0.1,
     description: " Likes to help the baker with the small prep ",
   },
 
   {
-    name: "Baker ",
+    name: "baker",
     cost: 100,
     rate: 2,
     description: " handles the whole kitchen alongside the assistant",
   },
 
   {
-    name: "Stone Oven",
+    name: "stoneOven",
     cost: 1000,
     rate: 50,
     description: " Speeds up the time for pastries and cuts the line",
   },
 
   {
-    name: "Mixer",
+    name: "mixer",
     cost: 2000,
     rate: 100,
     description: "Helps speed up the process instead of handmade",
   },
 
   {
-    name: "Salesperson",
+    name: "salesPerson",
     cost: 5000,
     rate: 250,
     description: "Helps sell the corssiants and makes revenue ",
