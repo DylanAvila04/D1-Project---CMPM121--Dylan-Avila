@@ -1,7 +1,6 @@
 // 1) Imports
 import "./style.css";
 
-
 // 2) Type definitions
 interface Item {
   name: string;
@@ -9,7 +8,6 @@ interface Item {
   rate: number;
   description: string;
 }
-
 
 // 3) Game data (availableItems, Price_Multiply)
 //Main theme of the game is a bakery that makes Crossiants similar to cookie clicker
@@ -59,7 +57,6 @@ const availableItems: Item[] = [
 
 const Price_Multiply = 1.15;
 
-
 // 4) DOM setup
 document.body.innerHTML = `
   <button id = "mainButton"> 🥐 </button>
@@ -73,7 +70,6 @@ const counterElement = document.getElementById("Counter") as HTMLDivElement;
 const rateElement = document.getElementById("rate") as HTMLDivElement;
 const shopElement = document.getElementById("shop") as HTMLDivElement;
 
-
 // 5) State variables
 let counter = 0; // 0 crossiants to start
 const owned: Record<string, number> = {};
@@ -83,7 +79,6 @@ for (const item of availableItems) {
   owned[item.name] = 0;
   costs[item.name] = item.cost;
 }
-
 
 // 6) Utility functions
 function shop() {
@@ -122,7 +117,6 @@ function updateDisplay() {
   });
 }
 
-
 // 7) Event listeners
 mainButton.addEventListener("click", () => {
   counter += 1;
@@ -142,7 +136,6 @@ shopElement.addEventListener("click", (e) => {
     updateDisplay();
   }
 });
-
 
 // 8) Game loop
 let pasttime: number | null = null;
