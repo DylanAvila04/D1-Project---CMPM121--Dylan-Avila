@@ -70,8 +70,9 @@ document.body.innerHTML = `
   <button id = "mainButton"> 🥐 </button>
   <div id = "Counter"> You have 0 crossiants!🥐</div>
   <div id = "rate"> Passive income: 0.0 corssiants/sec 👩‍🍳</div>
-  <div id ="shop"></div>
+  <div id="shop" class="shop-container"></div>
 `;
+/* Button stacking interface inspired by https://github.com/isschrack/IncrementalGame_isschrack/blob/main/src/main.ts */
 
 const mainButton = document.getElementById("mainButton") as HTMLButtonElement;
 const counterElement = document.getElementById("Counter") as HTMLDivElement;
@@ -91,12 +92,13 @@ for (const item of availableItems) {
 // 6) Utility functions
 function shop() {
   shopElement.innerHTML = availableItems.map((i) => {
-    return `<button data-name="${i.name}">
+    return `<button class="shop-button" data-name="${i.name}">
       ${i.name} — cost: ${costs[i.name].toFixed(2)} (Owned: ${owned[i.name]})
     </button>`;
   }).join("");
 }
 shop();
+/* Button stacking interface inspired by https://github.com/isschrack/IncrementalGame_isschrack/blob/main/src/main.ts */
 
 function totalRate(): number {
   return availableItems.reduce((sum, i) => {
